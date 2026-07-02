@@ -3,9 +3,13 @@
 # cabi-db, cabi-web-db). The neighborhoods/meta/og ConfigMaps + db Secrets + ghcr-pull are
 # created out-of-band (see deploy/chart/README), exactly as for the hand-written manifests.
 
-name: ""                 # resource prefix + namespace (e.g. cabi / velib / ecobici)
+name: ""                 # resource prefix (e.g. cabi / velib / ecobici) — unique within the shared ns
+namespace: bikeshare     # all cities share ONE namespace; created out-of-band, not owned by a release
 hostIP: 10.0.0.120       # forge host running the per-city docker TimescaleDB
 pgPort: 0                # that DB's host port (e.g. 5439)
+
+ingress:
+  enabled: true          # set false to install without the Ingress (cutover: verify internally, then flip on)
 
 gbfs:
   informationUrl: ""

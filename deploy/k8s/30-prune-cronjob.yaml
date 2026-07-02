@@ -12,7 +12,7 @@ apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: dock-status-prune
-  namespace: citibike
+  namespace: bikeshare
   labels: {app: dock-status-prune}
 spec:
   schedule: "40 3 * * *"

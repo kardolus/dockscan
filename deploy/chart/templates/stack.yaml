@@ -1,33 +1,31 @@
 {{- $n := .Values.name -}}
-# {{ .Values.brand }} ({{ .Values.cityId }}) — full per-city stack. DB-per-city:
-# host TimescaleDB {{ $n }}-postgres on {{ .Values.hostIP }}:{{ .Values.pgPort }}.
-apiVersion: v1
-kind: Namespace
-metadata: {name: {{ $n }}, labels: {kardol.us/group: apps}}
----
+{{- $ns := .Values.namespace | default "bikeshare" -}}
+# {{ .Values.brand }} ({{ .Values.cityId }}) — per-city stack in the shared {{ $ns }} namespace.
+# DB-per-city: host TimescaleDB {{ $n }}-postgres on {{ .Values.hostIP }}:{{ .Values.pgPort }}.
+# The {{ $ns }} namespace is created out-of-band (not owned by any single release).
 # no-selector Service + Endpoints → host-docker {{ $n }}-postgres
 apiVersion: v1
 kind: Service
-metadata: {name: {{ $n }}-postgres, namespace: {{ $n }}}
+metadata: {name: {{ $n }}-postgres, namespace: {{ $ns }}}
 spec:
   type: ClusterIP
   ports: [{name: pg, port: 5432, targetPort: {{ .Values.pgPort }}, protocol: TCP}]
 ---
 apiVersion: v1
 kind: Endpoints
-metadata: {name: {{ $n }}-postgres, namespace: {{ $n }}}
+metadata: {name: {{ $n }}-postgres, namespace: {{ $ns }}}
 subsets:
   - addresses: [{ip: {{ .Values.hostIP }}}]
     ports: [{name: pg, port: {{ .Values.pgPort }}, protocol: TCP}]
 ---
 apiVersion: apps/v1
 kind: Deployment
-metadata: {name: dockscan, namespace: {{ $n }}, labels: {app: dockscan}}
+metadata: {name: {{ $n }}-dockscan, namespace: {{ $ns }}, labels: {app: {{ $n }}-dockscan, role: dockscan, city: {{ $n }}}}
 spec:
   replicas: 1
-  selector: {matchLabels: {app: dockscan}}
+  selector: {matchLabels: {app: {{ $n }}-dockscan}}
   template:
-    metadata: {labels: {app: dockscan}}
+    metadata: {labels: {app: {{ $n }}-dockscan, role: dockscan, city: {{ $n }}}}
     spec:
       imagePullSecrets: [{name: ghcr-pull}]
       containers:
@@ -59,14 +57,14 @@ spec:
 ---
 apiVersion: v1
 kind: Service
-metadata: {name: dockscan, namespace: {{ $n }}, labels: {app: dockscan}}
+metadata: {name: {{ $n }}-dockscan, namespace: {{ $ns }}, labels: {app: {{ $n }}-dockscan, role: dockscan, city: {{ $n }}}}
 spec:
-  selector: {app: dockscan}
+  selector: {app: {{ $n }}-dockscan}
   ports: [{name: metrics, port: 2112, targetPort: 2112}]
 ---
 apiVersion: apps/v1
 kind: Deployment
-metadata: {name: {{ $n }}-web, namespace: {{ $n }}, labels: {app: {{ $n }}-web}}
+metadata: {name: {{ $n }}-web, namespace: {{ $ns }}, labels: {app: {{ $n }}-web}}
 spec:
   replicas: 1
   selector: {matchLabels: {app: {{ $n }}-web}}
@@ -109,16 +107,17 @@ spec:
 ---
 apiVersion: v1
 kind: Service
-metadata: {name: {{ $n }}-web, namespace: {{ $n }}, labels: {app: {{ $n }}-web}}
+metadata: {name: {{ $n }}-web, namespace: {{ $ns }}, labels: {app: {{ $n }}-web}}
 spec:
   selector: {app: {{ $n }}-web}
   ports: [{name: http, port: 8000, targetPort: 8000}]
+{{- if .Values.ingress.enabled }}
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: {{ $n }}-web
-  namespace: {{ $n }}
+  namespace: {{ $ns }}
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
@@ -134,3 +133,4 @@ spec:
           - path: /
             pathType: Prefix
             backend: {service: {name: {{ $n }}-web, port: {number: 8000}}}
+{{- end }}

@@ -13,16 +13,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dockscan
-  namespace: citibike
-  labels: {app: dockscan}
+  name: citibike-dockscan
+  namespace: bikeshare
+  labels: {app: citibike-dockscan, role: dockscan, city: citibike}
 spec:
   replicas: 1
   selector:
-    matchLabels: {app: dockscan}
+    matchLabels: {app: citibike-dockscan}
   template:
     metadata:
-      labels: {app: dockscan}
+      labels: {app: citibike-dockscan, role: dockscan, city: citibike}
     spec:
       imagePullSecrets:
         - name: ghcr-pull
@@ -52,10 +52,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: dockscan
-  namespace: citibike
-  labels: {app: dockscan}
+  name: citibike-dockscan
+  namespace: bikeshare
+  labels: {app: citibike-dockscan, role: dockscan, city: citibike}
 spec:
-  selector: {app: dockscan}
+  selector: {app: citibike-dockscan}
   ports:
     - {name: metrics, port: 2112, targetPort: 2112}
