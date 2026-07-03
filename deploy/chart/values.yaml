@@ -35,4 +35,4 @@ defaultLang: en          # fallback UI language (en/es/fr) when the browser asks
 
 images:
   ingester: ghcr.io/kardolus/citi-bike-dock-tracker:v19
-  web: ghcr.io/kardolus/citibike-web:v66
+  web: ghcr.io/kardolus/citibike-web:v67
