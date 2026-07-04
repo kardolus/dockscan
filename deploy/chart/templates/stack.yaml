@@ -44,6 +44,7 @@ spec:
             {{- end }}
             - {name: NEIGHBORHOODS_PATH, value: /config/neighborhoods.json}
             - {name: RETENTION_DAYS, value: {{ .Values.retentionDays | quote }}}
+            - {name: REQUIRE_STATION_CODE, value: {{ .Values.requireStationCode | quote }}}
             - {name: USER_AGENT, value: {{ .Values.userAgent | quote }}}
             - name: DATABASE_URL
               valueFrom: {secretKeyRef: {name: {{ $n }}-db, key: DATABASE_URL}}

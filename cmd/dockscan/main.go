@@ -153,6 +153,11 @@ func runTs(cmd *cobra.Command, args []string) error {
 	// FEED_FORMAT selects the parser: "gbfs" (default) or "tfl" (London Santander Cycles —
 	// TfL's non-GBFS BikePoint API; info+status both read the BikePoint endpoint).
 	builder = builder.WithFeedFormat(os.Getenv("FEED_FORMAT"))
+	// REQUIRE_STATION_CODE=true drops feed entries with no short_name (e.g. Divvy
+	// "Public Rack"/corral parking spots) so they aren't tracked as docking stations.
+	if v := os.Getenv("REQUIRE_STATION_CODE"); v == "true" || v == "1" {
+		builder = builder.WithRequireStationCode(true)
+	}
 	if infoURL, statusURL := os.Getenv("GBFS_STATION_INFORMATION_URL"), os.Getenv("GBFS_STATION_STATUS_URL"); infoURL != "" || statusURL != "" {
 		// TfL BikePoint is public; an optional free app_key just raises rate limits.
 		if key := os.Getenv("TFL_APP_KEY"); key != "" {

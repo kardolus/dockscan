@@ -66,19 +66,20 @@ type Client struct {
 }
 
 type ClientBuilder struct {
-	caller          http.Caller
-	stationMap      map[string]types.StationEntity
-	timeProvider    TimeProvider
-	interval        int
-	serviceURL      string
-	statusURL       string // full station_status URL (per-city, e.g. Lyft /gbfs/2.3/dca-cabi/en/...)
-	infoURL         string // full station_information URL
-	vehicleTypesURL string // full vehicle_types.json URL (PBSC/Bicing e-bike classification)
-	feedFormat      string // "gbfs" (default) or "tfl" (London Santander Cycles BikePoint)
-	filteredIDs     map[string]bool
-	bbox            *BBox
-	neighborhoods   []Neighborhood
-	outputDirectory string
+	caller             http.Caller
+	stationMap         map[string]types.StationEntity
+	timeProvider       TimeProvider
+	interval           int
+	serviceURL         string
+	statusURL          string // full station_status URL (per-city, e.g. Lyft /gbfs/2.3/dca-cabi/en/...)
+	infoURL            string // full station_information URL
+	vehicleTypesURL    string // full vehicle_types.json URL (PBSC/Bicing e-bike classification)
+	feedFormat         string // "gbfs" (default) or "tfl" (London Santander Cycles BikePoint)
+	filteredIDs        map[string]bool
+	bbox               *BBox
+	neighborhoods      []Neighborhood
+	requireStationCode bool // drop feed entries with no short_name (e.g. Divvy "Public Rack" corrals — not real docking stations)
+	outputDirectory    string
 }
 
 func NewClientBuilder() *ClientBuilder {
@@ -118,6 +119,16 @@ func (b *ClientBuilder) WithBBox(box BBox) *ClientBuilder {
 // neighborhood, so none are dropped.
 func (b *ClientBuilder) WithNeighborhoods(ns []Neighborhood) *ClientBuilder {
 	b.neighborhoods = ns
+	return b
+}
+
+// WithRequireStationCode, when enabled, drops feed entries that have no short_name
+// station code. Some systems (notably Divvy) list on-street "Public Rack"/corral
+// parking spots alongside real docking stations; those lack a short_name and are
+// empty by design, so counting them as (empty) stations is misleading. Opt-in per
+// city — the default keeps every station.
+func (b *ClientBuilder) WithRequireStationCode(require bool) *ClientBuilder {
+	b.requireStationCode = require
 	return b
 }
 
@@ -195,12 +206,19 @@ func (b *ClientBuilder) Build() (*Client, error) {
 	}
 
 	neighborhood := make(map[string]string)
+	droppedNoCode := 0
 	for _, station := range stationInfo.Data.Stations {
 		// include unless an ID filter, bbox, or neighborhood set excludes it
 		if len(b.filteredIDs) > 0 {
 			if _, ok := b.filteredIDs[station.StationID]; !ok {
 				continue
 			}
+		}
+		// drop non-docking entries (no short_name station code) when opted in —
+		// e.g. Divvy's "Public Rack"/corral parking spots, which are empty by design.
+		if b.requireStationCode && station.ShortName.String() == "" {
+			droppedNoCode++
+			continue
 		}
 		if b.bbox != nil && !b.bbox.contains(station.Lat, station.Lon) {
 			continue
@@ -213,6 +231,9 @@ func (b *ClientBuilder) Build() (*Client, error) {
 			neighborhood[station.StationID] = slug
 		}
 		b.stationMap[station.StationID] = station
+	}
+	if b.requireStationCode {
+		log.Printf("station-code filter: kept %d, dropped %d entries without a short_name (non-docking racks)", len(b.stationMap), droppedNoCode)
 	}
 
 	return &Client{

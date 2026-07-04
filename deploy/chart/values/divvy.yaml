@@ -11,6 +11,7 @@ timezone: America/Chicago
 hasEbikes: true
 defaultScope: everywhere
 neighborhoodLabel: Neighborhood
-description: "Live Divvy dock availability and 90-day patterns across Chicago — 2,000+ stations, neighborhood by neighborhood."
+description: "Live Divvy dock availability and 90-day patterns across Chicago — 1,000+ docking stations, neighborhood by neighborhood."
+requireStationCode: true  # Divvy lists ~860 on-street "Public Rack" corrals (no short_name, empty by design) alongside real docks — drop them
 umamiId: 5fba728f-fac5-4b39-a5ca-ed9f2c8dd4ef
 areaOverrides: "{}"

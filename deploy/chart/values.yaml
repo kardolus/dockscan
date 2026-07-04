@@ -30,9 +30,10 @@ description: ""
 umamiId: ""
 areaOverrides: "{}"      # JSON string
 retentionDays: 90        # drop dock_status chunks older than this (keeps each city bounded)
+requireStationCode: false # drop feed entries with no short_name (e.g. Divvy "Public Rack" corrals — not real docking stations)
 serviceHours: ""         # "HH:MM-HH:MM" local if the system closes overnight (e.g. Ecobici); empty = 24/7
 defaultLang: en          # fallback UI language (en/es/fr) when the browser asks for something unsupported
 
 images:
-  ingester: ghcr.io/kardolus/citi-bike-dock-tracker:v19
+  ingester: ghcr.io/kardolus/citi-bike-dock-tracker:v20
   web: ghcr.io/kardolus/citibike-web:v67
