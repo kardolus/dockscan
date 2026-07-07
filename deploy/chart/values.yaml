@@ -38,4 +38,4 @@ images:
   # ingester still on the pre-rename GHCR package (registry doesn't follow repo
   # renames); switches to ghcr.io/kardolus/dockscan on its next image bump.
   ingester: ghcr.io/kardolus/citi-bike-dock-tracker:v20
-  web: ghcr.io/kardolus/bikeshare-web:v69
+  web: ghcr.io/kardolus/bikeshare-web:v70
