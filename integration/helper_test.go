@@ -3,8 +3,8 @@ package integration_test
 import (
 	"errors"
 	"fmt"
-	"github.com/kardolus/citi-bike-dock-tracker/client"
-	"github.com/kardolus/citi-bike-dock-tracker/utils"
+	"github.com/kardolus/dockscan/client"
+	"github.com/kardolus/dockscan/utils"
 	"github.com/onsi/gomega/gexec"
 	"io"
 	"net/http"
@@ -22,7 +22,7 @@ func buildBinary() error {
 	var err error
 	onceBuild.Do(func() {
 		binaryPath, err = gexec.Build(
-			"github.com/kardolus/citi-bike-dock-tracker/cmd/dockscan",
+			"github.com/kardolus/dockscan/cmd/dockscan",
 			"-ldflags",
 			fmt.Sprintf("-X main.GitCommit=%s -X main.GitVersion=%s -X main.ServiceURL=%s", gitCommit, gitVersion, serviceURL))
 	})

@@ -2,9 +2,9 @@ package integration_test
 
 import (
 	"encoding/json"
-	"github.com/kardolus/citi-bike-dock-tracker/client"
-	"github.com/kardolus/citi-bike-dock-tracker/http"
-	"github.com/kardolus/citi-bike-dock-tracker/types"
+	"github.com/kardolus/dockscan/client"
+	"github.com/kardolus/dockscan/http"
+	"github.com/kardolus/dockscan/types"
 	. "github.com/onsi/gomega"
 	"github.com/sclevine/spec"
 	"github.com/sclevine/spec/report"

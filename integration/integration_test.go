@@ -3,8 +3,8 @@ package integration_test
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/kardolus/citi-bike-dock-tracker/client"
-	"github.com/kardolus/citi-bike-dock-tracker/types"
+	"github.com/kardolus/dockscan/client"
+	"github.com/kardolus/dockscan/types"
 	. "github.com/onsi/gomega"
 	"github.com/onsi/gomega/gexec"
 	"github.com/sclevine/spec"

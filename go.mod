@@ -1,4 +1,4 @@
-module github.com/kardolus/citi-bike-dock-tracker
+module github.com/kardolus/dockscan
 
 go 1.20
 

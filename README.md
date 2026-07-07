@@ -80,31 +80,31 @@ a variety of common systems:
 ### Apple M1 chips
 
 ```shell
-curl -L -o dockscan https://github.com/kardolus/citi-bike-dock-tracker/releases/download/v1.2/dockscan-darwin-arm64 && chmod +x dockscan && sudo mv dockscan /usr/local/bin/
+curl -L -o dockscan https://github.com/kardolus/dockscan/releases/download/v1.2/dockscan-darwin-arm64 && chmod +x dockscan && sudo mv dockscan /usr/local/bin/
 ```
 
 ### macOS Intel chips
 
 ```shell
-curl -L -o dockscan https://github.com/kardolus/citi-bike-dock-tracker/releases/download/v1.2/dockscan-darwin-amd64 && chmod +x dockscan && sudo mv dockscan /usr/local/bin/
+curl -L -o dockscan https://github.com/kardolus/dockscan/releases/download/v1.2/dockscan-darwin-amd64 && chmod +x dockscan && sudo mv dockscan /usr/local/bin/
 ```
 
 ### Linux (amd64)
 
 ```shell
-curl -L -o dockscan https://github.com/kardolus/citi-bike-dock-tracker/releases/download/v1.2/dockscan-linux-amd64 && chmod +x dockscan && sudo mv dockscan /usr/local/bin/
+curl -L -o dockscan https://github.com/kardolus/dockscan/releases/download/v1.2/dockscan-linux-amd64 && chmod +x dockscan && sudo mv dockscan /usr/local/bin/
 ```
 
 ### Linux (arm64)
 
 ```shell
-curl -L -o dockscan https://github.com/kardolus/citi-bike-dock-tracker/releases/download/v1.2/dockscan-linux-arm64 && chmod +x dockscan && sudo mv dockscan /usr/local/bin/
+curl -L -o dockscan https://github.com/kardolus/dockscan/releases/download/v1.2/dockscan-linux-arm64 && chmod +x dockscan && sudo mv dockscan /usr/local/bin/
 ```
 
 ### Windows (amd64)
 
 Download the binary
-from [this link](https://github.com/kardolus/citi-bike-dock-tracker/releases/download/v1.2/dockscan-windows-amd64.exe)
+from [this link](https://github.com/kardolus/dockscan/releases/download/v1.2/dockscan-windows-amd64.exe)
 and add it to your PATH.
 
 Choose the appropriate command for your system, which will download the binary, make it executable, and move it to your

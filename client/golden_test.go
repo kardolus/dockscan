@@ -6,7 +6,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/kardolus/citi-bike-dock-tracker/types"
+	"github.com/kardolus/dockscan/types"
 )
 
 // TestGoldenNYCAssignment is the Phase-0 de-risk gate: it proves that loading the

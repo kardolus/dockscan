@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"github.com/golang/mock/gomock"
 	_ "github.com/golang/mock/mockgen/model"
-	"github.com/kardolus/citi-bike-dock-tracker/client"
-	"github.com/kardolus/citi-bike-dock-tracker/utils"
+	"github.com/kardolus/dockscan/client"
+	"github.com/kardolus/dockscan/utils"
 	. "github.com/onsi/gomega"
 	"github.com/sclevine/spec"
 	"github.com/sclevine/spec/report"
@@ -13,8 +13,8 @@ import (
 	"time"
 )
 
-//go:generate mockgen -destination=callermocks_test.go -package=client_test github.com/kardolus/citi-bike-dock-tracker/http Caller
-//go:generate mockgen -destination=timemocks_test.go -package=client_test github.com/kardolus/citi-bike-dock-tracker/client TimeProvider
+//go:generate mockgen -destination=callermocks_test.go -package=client_test github.com/kardolus/dockscan/http Caller
+//go:generate mockgen -destination=timemocks_test.go -package=client_test github.com/kardolus/dockscan/client TimeProvider
 
 var (
 	mockCtrl         *gomock.Controller

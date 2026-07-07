@@ -3,8 +3,8 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/kardolus/citi-bike-dock-tracker/client"
-	"github.com/kardolus/citi-bike-dock-tracker/metrics"
+	"github.com/kardolus/dockscan/client"
+	"github.com/kardolus/dockscan/metrics"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 	"os"
