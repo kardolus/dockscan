@@ -88,6 +88,7 @@ spec:
             - {name: DEFAULT_SCOPE, value: {{ .Values.defaultScope | quote }}}
             - {name: NEIGHBORHOOD_LABEL, value: {{ .Values.neighborhoodLabel | quote }}}
             - {name: NEIGHBORHOODS_META_PATH, value: /config/neighborhoods.meta.json}
+            - {name: POLYGONS_PATH, value: /config/neighborhoods.json}
             - {name: OG_IMAGE_PATH, value: /config/og.png}
             - {name: UMAMI_WEBSITE_ID, value: {{ .Values.umamiId | quote }}}
             - {name: DESCRIPTION, value: {{ .Values.description | quote }}}
@@ -98,12 +99,15 @@ spec:
               valueFrom: {secretKeyRef: {name: {{ $n }}-web-db, key: DATABASE_URL}}
           volumeMounts:
             - {name: meta, mountPath: /config/neighborhoods.meta.json, subPath: neighborhoods.meta.json}
+            - {name: neighborhoods, mountPath: /config/neighborhoods.json, subPath: neighborhoods.json}
             - {name: og, mountPath: /config/og.png, subPath: og.png}
           readinessProbe: {httpGet: {path: /ready, port: 8000}, initialDelaySeconds: 5, periodSeconds: 15}
           livenessProbe: {httpGet: {path: /healthz, port: 8000}, initialDelaySeconds: 10, periodSeconds: 20}
           resources: {requests: {cpu: 25m, memory: 64Mi}, limits: {memory: 256Mi}}
       volumes:
         - {name: meta, configMap: {name: {{ $n }}-neighborhoods-meta}}
+        # full polygon rings (same configmap the ingester mounts) -> /api/polygons choropleth
+        - {name: neighborhoods, configMap: {name: {{ $n }}-neighborhoods}}
         - {name: og, configMap: {name: {{ $n }}-og}}
 ---
 apiVersion: v1
