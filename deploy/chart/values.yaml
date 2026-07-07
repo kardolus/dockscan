@@ -34,9 +34,8 @@ requireStationCode: false # drop feed entries with no short_name (e.g. Divvy "Pu
 serviceHours: ""         # "HH:MM-HH:MM" local if the system closes overnight (e.g. Ecobici); empty = 24/7
 defaultLang: en          # fallback UI language (en/es/fr) when the browser asks for something unsupported
 
-# NOTE: GHCR packages don't follow the 2026-07-07 repo renames (repos are now
-# kardolus/dockscan + kardolus/bikeshare-web); keep pulling the old package names
-# until the next image bump publishes ghcr.io/kardolus/{dockscan,bikeshare-web}.
 images:
+  # ingester still on the pre-rename GHCR package (registry doesn't follow repo
+  # renames); switches to ghcr.io/kardolus/dockscan on its next image bump.
   ingester: ghcr.io/kardolus/citi-bike-dock-tracker:v20
-  web: ghcr.io/kardolus/citibike-web:v67
+  web: ghcr.io/kardolus/bikeshare-web:v68
