@@ -1,6 +1,16 @@
-# Citi Bike Dock Tracker
+# dockscan
 
-_NEW [Research on data collected using this repo](https://github.com/kardolus/opendata)_
+**A GBFS bikeshare dock tracker** — a Go CLI that fetches, stores, and analyzes time-series
+dock-availability data for any [GBFS](https://gbfs.org/) bikeshare system. It started as a
+Citi Bike (NYC) tool and is now feed-agnostic: point it at any operator's Station
+Information + Station Status feeds and it tracks bikes available, e-bikes, open docks, and
+how they change over time.
+
+The same ingester powers a fleet of live public trackers across **8 cities on 4 continents**:
+New York (Citi Bike), Washington DC (Capital Bikeshare), Chicago (Divvy), Paris (Vélib'),
+Mexico City & Buenos Aires (Ecobici), Barcelona (Bicing), and London (Santander Cycles).
+
+_[Research on data collected using this repo](https://github.com/kardolus/opendata)_
 
 ## Table of Contents
 
@@ -23,30 +33,40 @@ _NEW [Research on data collected using this repo](https://github.com/kardolus/op
 
 ## Introduction
 
-Welcome to the `Citi Bike Dock Tracker` repository, a robust tool designed for tracking, storing, and analyzing
-time-series data relating to the status of CitiBike docking stations across New York City. This command-line interface (
-CLI) tool provides granular details about each dock, including the number of available standard and electric bikes, the
-number of open docks, and the progression of these variables over time.
+`dockscan` tracks, stores, and analyzes time-series dock-availability data for GBFS
+bikeshare systems. It provides granular details about each dock — the number of available
+standard and electric bikes, the number of open docks, and how these change over time.
 
-The primary data source for this application is CitiBike's General Bikeshare Feed Specification (GBFS) data feeds. The
-tracker retrieves real-time information from two distinct GBFS feeds:
+The data source is any operator's [General Bikeshare Feed Specification
+(GBFS)](https://gbfs.org/) feeds, of which the tracker reads two:
 
-1. The Station Status feed (`https://gbfs.citibikenyc.com/gbfs/en/station_status.json`), which provides live updates
-   about each docking station's status, such as the number of available bikes, open docks, and more.
-2. The Station Information feed (`https://gbfs.citibikenyc.com/gbfs/en/station_information.json`), which delivers
-   essential information about each station, including its ID and human-readable name.
+1. The **Station Status** feed, which provides live updates about each docking station's
+   status — available bikes, open docks, and more.
+2. The **Station Information** feed, which delivers essential per-station metadata such as
+   its ID, human-readable name, and location.
 
-By consolidating and interpreting these two data sources, our CLI tool provides comprehensive, up-to-the-minute insights
-into the operational state of CitiBike docking stations. Users can fetch data for all stations, filter by specific
-station IDs, or even track time-series data for specified stations at user-defined intervals.
+The feed URLs are configurable, so `dockscan` works against any GBFS operator. By default it
+targets Citi Bike (NYC); set the `GBFS_STATION_INFORMATION_URL` and `GBFS_STATION_STATUS_URL`
+environment variables to point it at Vélib', Divvy, Bicing, Ecobici, or any other system.
+London's Santander Cycles is also supported via TfL's non-GBFS BikePoint API (`FEED_FORMAT=tfl`).
 
-For maximum versatility, the `Citi Bike Dock Tracker` offers output in both JSON and CSV formats, catering to a wide
-array of data analysis and visualization needs. This makes it an ideal solution for bike users, data analysts, urban
-planners, and anyone else seeking to understand bike availability trends in real-time across New York City.
+By consolidating these two data sources, `dockscan` gives comprehensive, up-to-the-minute
+insight into a system's operational state. You can fetch data for all stations, filter by
+specific station IDs, restrict to a geographic area or curated neighborhoods, or track
+time-series data at user-defined intervals — writing to JSON, CSV, or Postgres. That makes it
+useful for riders, data analysts, and urban planners tracking bike-availability trends in
+real time.
+
+### Live deployments
+
+The `deploy/chart/` Helm chart runs one `dockscan` ingester per city (polling GBFS every few
+minutes into a per-city Postgres/TimescaleDB), paired with a web front-end. It powers the
+public trackers at `citi`, `cabi`, `divvy`, `velib`, `ecobici`, `ecobici-ba`, `bicing`, and
+`boris`.kardol.us. Adding a city is a values file — see `deploy/chart/README.md`.
 
 ### Output
 
-When you run the dockscan-cli, it produces a JSON output for each Citi Bike station. Here's an example of what one of
+When you run the dockscan-cli, it produces a JSON object per station (example from Citi Bike NYC): Here's an example of what one of
 these JSON objects might look like:
 
 ```json
@@ -112,7 +132,7 @@ Choose the appropriate command for your system, which will download the binary, 
 
 ## Usage
 
-The `dockscan` CLI tool has several commands for interacting with the Citi Bike data:
+The `dockscan` CLI has several commands for interacting with GBFS bikeshare data:
 
 ### Basic information fetching
 
