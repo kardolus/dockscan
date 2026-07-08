@@ -66,8 +66,7 @@ public trackers at `citi`, `cabi`, `divvy`, `velib`, `ecobici`, `ecobici-ba`, `b
 
 ### Output
 
-When you run the dockscan-cli, it produces a JSON object per station (example from Citi Bike NYC): Here's an example of what one of
-these JSON objects might look like:
+When you run `dockscan`, it produces a JSON object per station. Here's an example (from Citi Bike NYC):
 
 ```json
 {
