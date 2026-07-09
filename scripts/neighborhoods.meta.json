@@ -1,1 +1,1062 @@
-[{"slug": "governors-island", "display": "Governors Island", "area": "manhattan", "centroid": [40.6895, -74.0163], "count": 3}, {"slug": "red-hook", "display": "Red Hook", "area": "brooklyn", "centroid": [40.67784, -74.00962], "count": 20}, {"slug": "carroll-gardens", "display": "Carroll Gardens", "area": "brooklyn", "centroid": [40.68079, -73.99628], "count": 14}, {"slug": "cobble-hill", "display": "Cobble Hill", "area": "brooklyn", "centroid": [40.68757, -73.99581], "count": 7}, {"slug": "brooklyn-heights", "display": "Brooklyn Heights", "area": "brooklyn", "centroid": [40.69622, -73.99422], "count": 15}, {"slug": "dumbo-vinegar-hill", "display": "DUMBO & Vinegar Hill", "area": "brooklyn", "centroid": [40.70154, -73.98648], "count": 12}, {"slug": "gowanus", "display": "Gowanus", "area": "brooklyn", "centroid": [40.67726, -73.98459], "count": 21}, {"slug": "park-slope", "display": "Park Slope", "area": "brooklyn", "centroid": [40.66966, -73.97978], "count": 15}, {"slug": "williamsburg", "display": "Williamsburg", "area": "brooklyn", "centroid": [40.71298, -73.95124], "count": 84}, {"slug": "crown-heights", "display": "Crown Heights", "area": "brooklyn", "centroid": [40.67141, -73.94328], "count": 70}, {"slug": "greenpoint", "display": "Greenpoint", "area": "brooklyn", "centroid": [40.72956, -73.95213], "count": 26}, {"slug": "fort-greene", "display": "Fort Greene", "area": "brooklyn", "centroid": [40.69241, -73.97313], "count": 28}, {"slug": "sunset-park", "display": "Sunset Park", "area": "brooklyn", "centroid": [40.65032, -74.00948], "count": 40}, {"slug": "bay-ridge", "display": "Bay Ridge", "area": "brooklyn", "centroid": [40.62763, -74.03005], "count": 55}, {"slug": "downtown-brooklyn", "display": "Downtown Brooklyn", "area": "brooklyn", "centroid": [40.693, -73.98505], "count": 16}, {"slug": "boerum-hill", "display": "Boerum Hill", "area": "brooklyn", "centroid": [40.68651, -73.98301], "count": 4}, {"slug": "clinton-hill", "display": "Clinton Hill", "area": "brooklyn", "centroid": [40.68756, -73.95887], "count": 24}, {"slug": "prospect-heights", "display": "Prospect Heights", "area": "brooklyn", "centroid": [40.67703, -73.97134], "count": 14}, {"slug": "bedford-stuyvesant", "display": "Bedford-Stuyvesant", "area": "brooklyn", "centroid": [40.68879, -73.92612], "count": 115}, {"slug": "bushwick", "display": "Bushwick", "area": "brooklyn", "centroid": [40.70587, -73.9143], "count": 61}, {"slug": "east-new-york", "display": "East New York", "area": "brooklyn", "centroid": [40.69126, -73.89438], "count": 3}, {"slug": "brownsville", "display": "Brownsville", "area": "brooklyn", "centroid": [40.67297, -73.91402], "count": 11}, {"slug": "prospect-lefferts-gardens", "display": "Prospect Lefferts Gardens", "area": "brooklyn", "centroid": [40.65723, -73.94832], "count": 50}, {"slug": "east-flatbush", "display": "East Flatbush", "area": "brooklyn", "centroid": [40.64961, -73.93687], "count": 13}, {"slug": "flatbush", "display": "Flatbush", "area": "brooklyn", "centroid": [40.64625, -73.96061], "count": 23}, {"slug": "windsor-terrace", "display": "Windsor Terrace", "area": "brooklyn", "centroid": [40.65365, -73.97671], "count": 19}, {"slug": "kensington", "display": "Kensington", "area": "brooklyn", "centroid": [40.64211, -73.97776], "count": 18}, {"slug": "greenwood-heights", "display": "Greenwood Heights", "area": "brooklyn", "centroid": [40.66317, -73.99108], "count": 14}, {"slug": "borough-park", "display": "Borough Park", "area": "brooklyn", "centroid": [40.64521, -73.99188], "count": 2}, {"slug": "dyker-heights", "display": "Dyker Heights", "area": "brooklyn", "centroid": [40.63836, -74.01385], "count": 9}, {"slug": "hoboken", "display": "Hoboken", "area": "hoboken", "centroid": [40.74441, -74.03183], "count": 29}, {"slug": "jc-downtown", "display": "Downtown Jersey City", "area": "jersey-city", "centroid": [40.72, -74.04253], "count": 29}, {"slug": "jc-the-heights", "display": "The Heights", "area": "jersey-city", "centroid": [40.74055, -74.04692], "count": 8}, {"slug": "jc-journal-square", "display": "Journal Square", "area": "jersey-city", "centroid": [40.72915, -74.06508], "count": 12}, {"slug": "jc-bergen-lafayette", "display": "Bergen-Lafayette", "area": "jersey-city", "centroid": [40.71009, -74.07329], "count": 15}, {"slug": "jc-west-side", "display": "West Side", "area": "jersey-city", "centroid": [40.71322, -74.08811], "count": 9}, {"slug": "jc-greenville", "display": "Greenville", "area": "jersey-city", "centroid": [40.69643, -74.08665], "count": 8}, {"slug": "mott-haven-port-morris", "display": "Mott Haven-Port Morris", "area": "bronx", "centroid": [40.80831, -73.91832], "count": 35}, {"slug": "melrose", "display": "Melrose", "area": "bronx", "centroid": [40.81855, -73.91243], "count": 20}, {"slug": "hunts-point", "display": "Hunts Point", "area": "bronx", "centroid": [40.81756, -73.8895], "count": 7}, {"slug": "longwood", "display": "Longwood", "area": "bronx", "centroid": [40.82189, -73.89544], "count": 17}, {"slug": "morrisania", "display": "Morrisania", "area": "bronx", "centroid": [40.82854, -73.90339], "count": 11}, {"slug": "claremont-village-claremont-east", "display": "Claremont Village-Claremont (East)", "area": "bronx", "centroid": [40.8378, -73.90358], "count": 14}, {"slug": "crotona-park-east", "display": "Crotona Park East", "area": "bronx", "centroid": [40.83313, -73.88987], "count": 15}, {"slug": "concourse-concourse-village", "display": "Concourse-Concourse Village", "area": "bronx", "centroid": [40.82712, -73.92138], "count": 28}, {"slug": "highbridge", "display": "Highbridge", "area": "bronx", "centroid": [40.83487, -73.92664], "count": 13}, {"slug": "mount-eden-claremont-west", "display": "Mount Eden-Claremont (West)", "area": "bronx", "centroid": [40.84005, -73.91378], "count": 16}, {"slug": "university-heights-south-morris-heights", "display": "University Heights (South)-Morris Heights", "area": "bronx", "centroid": [40.8516, -73.91488], "count": 21}, {"slug": "mount-hope", "display": "Mount Hope", "area": "bronx", "centroid": [40.85035, -73.90431], "count": 17}, {"slug": "fordham-heights", "display": "Fordham Heights", "area": "bronx", "centroid": [40.85865, -73.8985], "count": 8}, {"slug": "west-farms", "display": "West Farms", "area": "bronx", "centroid": [40.84296, -73.88275], "count": 11}, {"slug": "tremont", "display": "Tremont", "area": "bronx", "centroid": [40.84728, -73.89202], "count": 14}, {"slug": "belmont", "display": "Belmont", "area": "bronx", "centroid": [40.85691, -73.8869], "count": 13}, {"slug": "university-heights-north-fordham", "display": "University Heights (North)-Fordham", "area": "bronx", "centroid": [40.8643, -73.90398], "count": 17}, {"slug": "bedford-park", "display": "Bedford Park", "area": "bronx", "centroid": [40.8731, -73.88964], "count": 25}, {"slug": "norwood", "display": "Norwood", "area": "bronx", "centroid": [40.87699, -73.88003], "count": 20}, {"slug": "kingsbridge-heights-van-cortlandt-village", "display": "Kingsbridge Heights-Van Cortlandt Village", "area": "bronx", "centroid": [40.87574, -73.90091], "count": 11}, {"slug": "kingsbridge-marble-hill", "display": "Kingsbridge-Marble Hill", "area": "bronx", "centroid": [40.88242, -73.90395], "count": 15}, {"slug": "riverdale-spuyten-duyvil", "display": "Riverdale-Spuyten Duyvil", "area": "bronx", "centroid": [40.89493, -73.9066], "count": 19}, {"slug": "financial-district-battery-park-city", "display": "Financial District-Battery Park City", "area": "manhattan", "centroid": [40.70727, -74.01063], "count": 34}, {"slug": "tribeca-civic-center", "display": "Tribeca-Civic Center", "area": "manhattan", "centroid": [40.71739, -74.00777], "count": 24}, {"slug": "soho-little-italy-hudson-square", "display": "SoHo-Little Italy-Hudson Square", "area": "manhattan", "centroid": [40.72395, -74.00151], "count": 20}, {"slug": "greenwich-village", "display": "Greenwich Village", "area": "manhattan", "centroid": [40.73118, -73.99519], "count": 19}, {"slug": "west-village", "display": "West Village", "area": "manhattan", "centroid": [40.73557, -74.00528], "count": 21}, {"slug": "chinatown-two-bridges", "display": "Chinatown-Two Bridges", "area": "manhattan", "centroid": [40.71333, -73.99357], "count": 17}, {"slug": "lower-east-side", "display": "Lower East Side", "area": "manhattan", "centroid": [40.71795, -73.9856], "count": 22}, {"slug": "east-village", "display": "East Village", "area": "manhattan", "centroid": [40.72635, -73.98349], "count": 39}, {"slug": "chelsea-hudson-yards", "display": "Chelsea-Hudson Yards", "area": "manhattan", "centroid": [40.74844, -74.00026], "count": 41}, {"slug": "hell-s-kitchen", "display": "Hell's Kitchen", "area": "manhattan", "centroid": [40.76285, -73.99084], "count": 21}, {"slug": "midtown-south-flatiron-union-square", "display": "Midtown South-Flatiron-Union Square", "area": "manhattan", "centroid": [40.74387, -73.98966], "count": 23}, {"slug": "midtown-times-square", "display": "Midtown-Times Square", "area": "manhattan", "centroid": [40.75804, -73.98117], "count": 43}, {"slug": "stuyvesant-town-peter-cooper-village", "display": "Stuyvesant Town-Peter Cooper Village", "area": "manhattan", "centroid": [40.7325, -73.97804], "count": 6}, {"slug": "gramercy", "display": "Gramercy", "area": "manhattan", "centroid": [40.73711, -73.98466], "count": 10}, {"slug": "murray-hill-kips-bay", "display": "Murray Hill-Kips Bay", "area": "manhattan", "centroid": [40.74482, -73.97682], "count": 23}, {"slug": "east-midtown-turtle-bay", "display": "East Midtown-Turtle Bay", "area": "manhattan", "centroid": [40.75594, -73.96888], "count": 18}, {"slug": "upper-west-side-lincoln-square", "display": "Upper West Side-Lincoln Square", "area": "manhattan", "centroid": [40.77435, -73.9836], "count": 16}, {"slug": "upper-west-side-central", "display": "Upper West Side (Central)", "area": "manhattan", "centroid": [40.78704, -73.97482], "count": 23}, {"slug": "upper-west-side-manhattan-valley", "display": "Upper West Side-Manhattan Valley", "area": "manhattan", "centroid": [40.79857, -73.96561], "count": 12}, {"slug": "upper-east-side-lenox-hill-roosevelt-island", "display": "Upper East Side-Lenox Hill-Roosevelt Island", "area": "manhattan", "centroid": [40.76534, -73.95841], "count": 18}, {"slug": "upper-east-side-carnegie-hill", "display": "Upper East Side-Carnegie Hill", "area": "manhattan", "centroid": [40.77522, -73.96098], "count": 20}, {"slug": "upper-east-side-yorkville", "display": "Upper East Side-Yorkville", "area": "manhattan", "centroid": [40.77783, -73.94907], "count": 14}, {"slug": "morningside-heights", "display": "Morningside Heights", "area": "manhattan", "centroid": [40.80938, -73.96045], "count": 11}, {"slug": "manhattanville-west-harlem", "display": "Manhattanville-West Harlem", "area": "manhattan", "centroid": [40.81862, -73.95395], "count": 12}, {"slug": "hamilton-heights-sugar-hill", "display": "Hamilton Heights-Sugar Hill", "area": "manhattan", "centroid": [40.82695, -73.94743], "count": 18}, {"slug": "harlem-south", "display": "Harlem (South)", "area": "manhattan", "centroid": [40.80376, -73.95171], "count": 14}, {"slug": "harlem-north", "display": "Harlem (North)", "area": "manhattan", "centroid": [40.81843, -73.94127], "count": 26}, {"slug": "east-harlem-south", "display": "East Harlem (South)", "area": "manhattan", "centroid": [40.78984, -73.94734], "count": 16}, {"slug": "east-harlem-north", "display": "East Harlem (North)", "area": "manhattan", "centroid": [40.80152, -73.93775], "count": 27}, {"slug": "washington-heights-south", "display": "Washington Heights (South)", "area": "manhattan", "centroid": [40.83919, -73.94013], "count": 24}, {"slug": "washington-heights-north", "display": "Washington Heights (North)", "area": "manhattan", "centroid": [40.85594, -73.93204], "count": 24}, {"slug": "inwood", "display": "Inwood", "area": "manhattan", "centroid": [40.86656, -73.91964], "count": 18}, {"slug": "astoria-north-ditmars-steinway", "display": "Astoria (North)-Ditmars-Steinway", "area": "queens", "centroid": [40.77512, -73.90804], "count": 39}, {"slug": "old-astoria-hallets-point", "display": "Old Astoria-Hallets Point", "area": "queens", "centroid": [40.77304, -73.93063], "count": 14}, {"slug": "astoria-central", "display": "Astoria (Central)", "area": "queens", "centroid": [40.76297, -73.92356], "count": 18}, {"slug": "astoria-east-woodside-north", "display": "Astoria (East)-Woodside (North)", "area": "queens", "centroid": [40.75874, -73.91151], "count": 32}, {"slug": "queensbridge-ravenswood-dutch-kills", "display": "Queensbridge-Ravenswood-Dutch Kills", "area": "queens", "centroid": [40.75788, -73.93706], "count": 24}, {"slug": "long-island-city-hunters-point", "display": "Long Island City-Hunters Point", "area": "queens", "centroid": [40.74539, -73.94963], "count": 26}, {"slug": "sunnyside", "display": "Sunnyside", "area": "queens", "centroid": [40.74284, -73.92545], "count": 39}, {"slug": "woodside", "display": "Woodside", "area": "queens", "centroid": [40.74492, -73.90274], "count": 35}, {"slug": "jackson-heights", "display": "Jackson Heights", "area": "queens", "centroid": [40.75518, -73.88511], "count": 44}, {"slug": "east-elmhurst", "display": "East Elmhurst", "area": "queens", "centroid": [40.7635, -73.87278], "count": 26}, {"slug": "north-corona", "display": "North Corona", "area": "queens", "centroid": [40.75429, -73.86], "count": 17}, {"slug": "elmhurst", "display": "Elmhurst", "area": "queens", "centroid": [40.74166, -73.87802], "count": 35}, {"slug": "corona", "display": "Corona", "area": "queens", "centroid": [40.74359, -73.85822], "count": 28}, {"slug": "maspeth", "display": "Maspeth", "area": "queens", "centroid": [40.7233, -73.90644], "count": 22}, {"slug": "ridgewood", "display": "Ridgewood", "area": "queens", "centroid": [40.70636, -73.89395], "count": 9}, {"slug": "glendale", "display": "Glendale", "area": "queens", "centroid": [40.7019, -73.89011], "count": 2}, {"slug": "rego-park", "display": "Rego Park", "area": "queens", "centroid": [40.72954, -73.86197], "count": 8}, {"slug": "forest-hills", "display": "Forest Hills", "area": "queens", "centroid": [40.7263, -73.84602], "count": 38}]
+[
+{
+"slug": "brooklyn-heights",
+"display": "Brooklyn Heights",
+"area": "brooklyn",
+"centroid": [
+40.69551,
+-73.99392
+],
+"count": 12
+},
+{
+"slug": "greenpoint",
+"display": "Greenpoint",
+"area": "brooklyn",
+"centroid": [
+40.72877,
+-73.95146
+],
+"count": 29
+},
+{
+"slug": "williamsburg",
+"display": "Williamsburg",
+"area": "brooklyn",
+"centroid": [
+40.71242,
+-73.95
+],
+"count": 87
+},
+{
+"slug": "fort-greene",
+"display": "Fort Greene",
+"area": "brooklyn",
+"centroid": [
+40.69325,
+-73.97431
+],
+"count": 29
+},
+{
+"slug": "clinton-hill",
+"display": "Clinton Hill",
+"area": "brooklyn",
+"centroid": [
+40.68822,
+-73.96582
+],
+"count": 9
+},
+{
+"slug": "prospect-heights",
+"display": "Prospect Heights",
+"area": "brooklyn",
+"centroid": [
+40.67555,
+-73.96692
+],
+"count": 17
+},
+{
+"slug": "crown-heights",
+"display": "Crown Heights",
+"area": "brooklyn",
+"centroid": [
+40.6714,
+-73.94332
+],
+"count": 59
+},
+{
+"slug": "bedford-stuyvesant",
+"display": "Bedford-Stuyvesant",
+"area": "brooklyn",
+"centroid": [
+40.68424,
+-73.93326
+],
+"count": 100
+},
+{
+"slug": "bushwick",
+"display": "Bushwick",
+"area": "brooklyn",
+"centroid": [
+40.70002,
+-73.91358
+],
+"count": 103
+},
+{
+"slug": "brownsville",
+"display": "Brownsville",
+"area": "brooklyn",
+"centroid": [
+40.66416,
+-73.90944
+],
+"count": 29
+},
+{
+"slug": "prospect-lefferts-gardens",
+"display": "Prospect Lefferts Gardens",
+"area": "brooklyn",
+"centroid": [
+40.66004,
+-73.94866
+],
+"count": 32
+},
+{
+"slug": "east-flatbush",
+"display": "East Flatbush",
+"area": "brooklyn",
+"centroid": [
+40.65378,
+-73.93477
+],
+"count": 52
+},
+{
+"slug": "flatbush",
+"display": "Flatbush",
+"area": "brooklyn",
+"centroid": [
+40.64717,
+-73.96346
+],
+"count": 24
+},
+{
+"slug": "kensington",
+"display": "Kensington",
+"area": "brooklyn",
+"centroid": [
+40.64288,
+-73.97732
+],
+"count": 13
+},
+{
+"slug": "borough-park",
+"display": "Borough Park",
+"area": "brooklyn",
+"centroid": [
+40.63954,
+-73.98128
+],
+"count": 4
+},
+{
+"slug": "sunset-park",
+"display": "Sunset Park",
+"area": "brooklyn",
+"centroid": [
+40.64885,
+-74.00929
+],
+"count": 60
+},
+{
+"slug": "bay-ridge",
+"display": "Bay Ridge",
+"area": "brooklyn",
+"centroid": [
+40.62657,
+-74.03037
+],
+"count": 51
+},
+{
+"slug": "red-hook",
+"display": "Red Hook",
+"area": "brooklyn",
+"centroid": [
+40.67715,
+-74.01032
+],
+"count": 19
+},
+{
+"slug": "carroll-gardens",
+"display": "Carroll Gardens",
+"area": "brooklyn",
+"centroid": [
+40.67945,
+-73.99686
+],
+"count": 13
+},
+{
+"slug": "cobble-hill",
+"display": "Cobble Hill",
+"area": "brooklyn",
+"centroid": [
+40.68754,
+-73.99841
+],
+"count": 12
+},
+{
+"slug": "gowanus",
+"display": "Gowanus",
+"area": "brooklyn",
+"centroid": [
+40.67656,
+-73.98472
+],
+"count": 23
+},
+{
+"slug": "downtown-brooklyn",
+"display": "Downtown Brooklyn",
+"area": "brooklyn",
+"centroid": [
+40.69314,
+-73.98709
+],
+"count": 7
+},
+{
+"slug": "dumbo-vinegar-hill",
+"display": "DUMBO / Vinegar Hill",
+"area": "brooklyn",
+"centroid": [
+40.70109,
+-73.98667
+],
+"count": 17
+},
+{
+"slug": "boerum-hill",
+"display": "Boerum Hill",
+"area": "brooklyn",
+"centroid": [
+40.68715,
+-73.98573
+],
+"count": 9
+},
+{
+"slug": "windsor-terrace",
+"display": "Windsor Terrace",
+"area": "brooklyn",
+"centroid": [
+40.65306,
+-73.97653
+],
+"count": 16
+},
+{
+"slug": "greenwood-heights",
+"display": "Greenwood Heights",
+"area": "brooklyn",
+"centroid": [
+40.65972,
+-73.98687
+],
+"count": 7
+},
+{
+"slug": "park-slope",
+"display": "Park Slope",
+"area": "brooklyn",
+"centroid": [
+40.66984,
+-73.9793
+],
+"count": 19
+},
+{
+"slug": "hoboken",
+"display": "Hoboken",
+"area": "hoboken",
+"centroid": [
+40.74441,
+-74.03183
+],
+"count": 29
+},
+{
+"slug": "jc-downtown",
+"display": "Downtown Jersey City",
+"area": "jersey-city",
+"centroid": [
+40.71999,
+-74.04274
+],
+"count": 28
+},
+{
+"slug": "jc-the-heights",
+"display": "The Heights",
+"area": "jersey-city",
+"centroid": [
+40.74055,
+-74.04692
+],
+"count": 8
+},
+{
+"slug": "jc-journal-square",
+"display": "Journal Square",
+"area": "jersey-city",
+"centroid": [
+40.72915,
+-74.06508
+],
+"count": 12
+},
+{
+"slug": "jc-bergen-lafayette",
+"display": "Bergen-Lafayette",
+"area": "jersey-city",
+"centroid": [
+40.71009,
+-74.07329
+],
+"count": 15
+},
+{
+"slug": "jc-west-side",
+"display": "West Side",
+"area": "jersey-city",
+"centroid": [
+40.71322,
+-74.08811
+],
+"count": 9
+},
+{
+"slug": "jc-greenville",
+"display": "Greenville",
+"area": "jersey-city",
+"centroid": [
+40.69643,
+-74.08665
+],
+"count": 8
+},
+{
+"slug": "mott-haven-port-morris",
+"display": "Mott Haven-Port Morris",
+"area": "bronx",
+"centroid": [
+40.80831,
+-73.91832
+],
+"count": 35
+},
+{
+"slug": "melrose",
+"display": "Melrose",
+"area": "bronx",
+"centroid": [
+40.81855,
+-73.91243
+],
+"count": 20
+},
+{
+"slug": "hunts-point",
+"display": "Hunts Point",
+"area": "bronx",
+"centroid": [
+40.81756,
+-73.8895
+],
+"count": 7
+},
+{
+"slug": "longwood",
+"display": "Longwood",
+"area": "bronx",
+"centroid": [
+40.82189,
+-73.89544
+],
+"count": 17
+},
+{
+"slug": "morrisania",
+"display": "Morrisania",
+"area": "bronx",
+"centroid": [
+40.82854,
+-73.90339
+],
+"count": 11
+},
+{
+"slug": "claremont-village-claremont-east",
+"display": "Claremont Village-Claremont (East)",
+"area": "bronx",
+"centroid": [
+40.8378,
+-73.90358
+],
+"count": 14
+},
+{
+"slug": "crotona-park-east",
+"display": "Crotona Park East",
+"area": "bronx",
+"centroid": [
+40.83313,
+-73.88987
+],
+"count": 15
+},
+{
+"slug": "concourse-concourse-village",
+"display": "Concourse-Concourse Village",
+"area": "bronx",
+"centroid": [
+40.82712,
+-73.92138
+],
+"count": 28
+},
+{
+"slug": "highbridge",
+"display": "Highbridge",
+"area": "bronx",
+"centroid": [
+40.83487,
+-73.92664
+],
+"count": 13
+},
+{
+"slug": "mount-eden-claremont-west",
+"display": "Mount Eden-Claremont (West)",
+"area": "bronx",
+"centroid": [
+40.84005,
+-73.91378
+],
+"count": 16
+},
+{
+"slug": "university-heights-south-morris-heights",
+"display": "University Heights (South)-Morris Heights",
+"area": "bronx",
+"centroid": [
+40.8516,
+-73.91488
+],
+"count": 21
+},
+{
+"slug": "mount-hope",
+"display": "Mount Hope",
+"area": "bronx",
+"centroid": [
+40.85035,
+-73.90431
+],
+"count": 17
+},
+{
+"slug": "fordham-heights",
+"display": "Fordham Heights",
+"area": "bronx",
+"centroid": [
+40.85865,
+-73.8985
+],
+"count": 8
+},
+{
+"slug": "west-farms",
+"display": "West Farms",
+"area": "bronx",
+"centroid": [
+40.84296,
+-73.88275
+],
+"count": 11
+},
+{
+"slug": "tremont",
+"display": "Tremont",
+"area": "bronx",
+"centroid": [
+40.84728,
+-73.89202
+],
+"count": 14
+},
+{
+"slug": "belmont",
+"display": "Belmont",
+"area": "bronx",
+"centroid": [
+40.85691,
+-73.8869
+],
+"count": 13
+},
+{
+"slug": "university-heights-north-fordham",
+"display": "University Heights (North)-Fordham",
+"area": "bronx",
+"centroid": [
+40.8643,
+-73.90398
+],
+"count": 17
+},
+{
+"slug": "bedford-park",
+"display": "Bedford Park",
+"area": "bronx",
+"centroid": [
+40.8731,
+-73.88964
+],
+"count": 25
+},
+{
+"slug": "norwood",
+"display": "Norwood",
+"area": "bronx",
+"centroid": [
+40.87699,
+-73.88003
+],
+"count": 20
+},
+{
+"slug": "kingsbridge-heights-van-cortlandt-village",
+"display": "Kingsbridge Heights-Van Cortlandt Village",
+"area": "bronx",
+"centroid": [
+40.87574,
+-73.90091
+],
+"count": 11
+},
+{
+"slug": "kingsbridge-marble-hill",
+"display": "Kingsbridge-Marble Hill",
+"area": "bronx",
+"centroid": [
+40.88242,
+-73.90395
+],
+"count": 15
+},
+{
+"slug": "riverdale-spuyten-duyvil",
+"display": "Riverdale-Spuyten Duyvil",
+"area": "bronx",
+"centroid": [
+40.89493,
+-73.9066
+],
+"count": 19
+},
+{
+"slug": "financial-district-battery-park-city",
+"display": "Financial District-Battery Park City",
+"area": "manhattan",
+"centroid": [
+40.7077,
+-74.01048
+],
+"count": 34
+},
+{
+"slug": "tribeca-civic-center",
+"display": "Tribeca-Civic Center",
+"area": "manhattan",
+"centroid": [
+40.71739,
+-74.00777
+],
+"count": 24
+},
+{
+"slug": "soho-little-italy-hudson-square",
+"display": "SoHo-Little Italy-Hudson Square",
+"area": "manhattan",
+"centroid": [
+40.72395,
+-74.00151
+],
+"count": 20
+},
+{
+"slug": "greenwich-village",
+"display": "Greenwich Village",
+"area": "manhattan",
+"centroid": [
+40.73118,
+-73.99519
+],
+"count": 19
+},
+{
+"slug": "west-village",
+"display": "West Village",
+"area": "manhattan",
+"centroid": [
+40.73557,
+-74.00528
+],
+"count": 21
+},
+{
+"slug": "chinatown-two-bridges",
+"display": "Chinatown-Two Bridges",
+"area": "manhattan",
+"centroid": [
+40.71333,
+-73.99357
+],
+"count": 17
+},
+{
+"slug": "lower-east-side",
+"display": "Lower East Side",
+"area": "manhattan",
+"centroid": [
+40.71795,
+-73.9856
+],
+"count": 22
+},
+{
+"slug": "east-village",
+"display": "East Village",
+"area": "manhattan",
+"centroid": [
+40.72635,
+-73.98349
+],
+"count": 39
+},
+{
+"slug": "chelsea-hudson-yards",
+"display": "Chelsea-Hudson Yards",
+"area": "manhattan",
+"centroid": [
+40.74844,
+-74.00026
+],
+"count": 41
+},
+{
+"slug": "hell-s-kitchen",
+"display": "Hell's Kitchen",
+"area": "manhattan",
+"centroid": [
+40.76285,
+-73.99084
+],
+"count": 21
+},
+{
+"slug": "midtown-south-flatiron-union-square",
+"display": "Midtown South-Flatiron-Union Square",
+"area": "manhattan",
+"centroid": [
+40.74387,
+-73.98966
+],
+"count": 23
+},
+{
+"slug": "midtown-times-square",
+"display": "Midtown-Times Square",
+"area": "manhattan",
+"centroid": [
+40.75804,
+-73.98117
+],
+"count": 43
+},
+{
+"slug": "stuyvesant-town-peter-cooper-village",
+"display": "Stuyvesant Town-Peter Cooper Village",
+"area": "manhattan",
+"centroid": [
+40.7325,
+-73.97804
+],
+"count": 6
+},
+{
+"slug": "gramercy",
+"display": "Gramercy",
+"area": "manhattan",
+"centroid": [
+40.73711,
+-73.98466
+],
+"count": 10
+},
+{
+"slug": "murray-hill-kips-bay",
+"display": "Murray Hill-Kips Bay",
+"area": "manhattan",
+"centroid": [
+40.74482,
+-73.97682
+],
+"count": 23
+},
+{
+"slug": "east-midtown-turtle-bay",
+"display": "East Midtown-Turtle Bay",
+"area": "manhattan",
+"centroid": [
+40.75594,
+-73.96888
+],
+"count": 18
+},
+{
+"slug": "upper-west-side-lincoln-square",
+"display": "Upper West Side-Lincoln Square",
+"area": "manhattan",
+"centroid": [
+40.77435,
+-73.9836
+],
+"count": 16
+},
+{
+"slug": "upper-west-side-central",
+"display": "Upper West Side (Central)",
+"area": "manhattan",
+"centroid": [
+40.78689,
+-73.97522
+],
+"count": 22
+},
+{
+"slug": "upper-west-side-manhattan-valley",
+"display": "Upper West Side-Manhattan Valley",
+"area": "manhattan",
+"centroid": [
+40.79857,
+-73.96561
+],
+"count": 12
+},
+{
+"slug": "upper-east-side-lenox-hill-roosevelt-island",
+"display": "Upper East Side-Lenox Hill-Roosevelt Island",
+"area": "manhattan",
+"centroid": [
+40.76534,
+-73.95841
+],
+"count": 18
+},
+{
+"slug": "upper-east-side-carnegie-hill",
+"display": "Upper East Side-Carnegie Hill",
+"area": "manhattan",
+"centroid": [
+40.77522,
+-73.96098
+],
+"count": 20
+},
+{
+"slug": "upper-east-side-yorkville",
+"display": "Upper East Side-Yorkville",
+"area": "manhattan",
+"centroid": [
+40.77783,
+-73.94907
+],
+"count": 14
+},
+{
+"slug": "morningside-heights",
+"display": "Morningside Heights",
+"area": "manhattan",
+"centroid": [
+40.80938,
+-73.96045
+],
+"count": 11
+},
+{
+"slug": "manhattanville-west-harlem",
+"display": "Manhattanville-West Harlem",
+"area": "manhattan",
+"centroid": [
+40.81862,
+-73.95395
+],
+"count": 12
+},
+{
+"slug": "hamilton-heights-sugar-hill",
+"display": "Hamilton Heights-Sugar Hill",
+"area": "manhattan",
+"centroid": [
+40.82695,
+-73.94743
+],
+"count": 18
+},
+{
+"slug": "harlem-south",
+"display": "Harlem (South)",
+"area": "manhattan",
+"centroid": [
+40.80376,
+-73.95171
+],
+"count": 14
+},
+{
+"slug": "harlem-north",
+"display": "Harlem (North)",
+"area": "manhattan",
+"centroid": [
+40.81843,
+-73.94127
+],
+"count": 26
+},
+{
+"slug": "east-harlem-south",
+"display": "East Harlem (South)",
+"area": "manhattan",
+"centroid": [
+40.78984,
+-73.94734
+],
+"count": 16
+},
+{
+"slug": "east-harlem-north",
+"display": "East Harlem (North)",
+"area": "manhattan",
+"centroid": [
+40.80152,
+-73.93775
+],
+"count": 27
+},
+{
+"slug": "washington-heights-south",
+"display": "Washington Heights (South)",
+"area": "manhattan",
+"centroid": [
+40.83919,
+-73.94013
+],
+"count": 24
+},
+{
+"slug": "washington-heights-north",
+"display": "Washington Heights (North)",
+"area": "manhattan",
+"centroid": [
+40.85594,
+-73.93204
+],
+"count": 24
+},
+{
+"slug": "inwood",
+"display": "Inwood",
+"area": "manhattan",
+"centroid": [
+40.86656,
+-73.91964
+],
+"count": 18
+},
+{
+"slug": "astoria-north-ditmars-steinway",
+"display": "Astoria (North)-Ditmars-Steinway",
+"area": "queens",
+"centroid": [
+40.77512,
+-73.90804
+],
+"count": 39
+},
+{
+"slug": "old-astoria-hallets-point",
+"display": "Old Astoria-Hallets Point",
+"area": "queens",
+"centroid": [
+40.77304,
+-73.93063
+],
+"count": 14
+},
+{
+"slug": "astoria-central",
+"display": "Astoria (Central)",
+"area": "queens",
+"centroid": [
+40.76297,
+-73.92356
+],
+"count": 18
+},
+{
+"slug": "astoria-east-woodside-north",
+"display": "Astoria (East)-Woodside (North)",
+"area": "queens",
+"centroid": [
+40.75874,
+-73.91151
+],
+"count": 32
+},
+{
+"slug": "queensbridge-ravenswood-dutch-kills",
+"display": "Queensbridge-Ravenswood-Dutch Kills",
+"area": "queens",
+"centroid": [
+40.75788,
+-73.93706
+],
+"count": 24
+},
+{
+"slug": "long-island-city-hunters-point",
+"display": "Long Island City-Hunters Point",
+"area": "queens",
+"centroid": [
+40.74539,
+-73.94963
+],
+"count": 26
+},
+{
+"slug": "sunnyside",
+"display": "Sunnyside",
+"area": "queens",
+"centroid": [
+40.74284,
+-73.92545
+],
+"count": 39
+},
+{
+"slug": "woodside",
+"display": "Woodside",
+"area": "queens",
+"centroid": [
+40.74492,
+-73.90274
+],
+"count": 35
+},
+{
+"slug": "jackson-heights",
+"display": "Jackson Heights",
+"area": "queens",
+"centroid": [
+40.75518,
+-73.88511
+],
+"count": 44
+},
+{
+"slug": "east-elmhurst",
+"display": "East Elmhurst",
+"area": "queens",
+"centroid": [
+40.7635,
+-73.87278
+],
+"count": 26
+},
+{
+"slug": "north-corona",
+"display": "North Corona",
+"area": "queens",
+"centroid": [
+40.75429,
+-73.86
+],
+"count": 17
+},
+{
+"slug": "elmhurst",
+"display": "Elmhurst",
+"area": "queens",
+"centroid": [
+40.74166,
+-73.87802
+],
+"count": 35
+},
+{
+"slug": "corona",
+"display": "Corona",
+"area": "queens",
+"centroid": [
+40.74359,
+-73.85822
+],
+"count": 28
+},
+{
+"slug": "maspeth",
+"display": "Maspeth",
+"area": "queens",
+"centroid": [
+40.7233,
+-73.90644
+],
+"count": 22
+},
+{
+"slug": "ridgewood",
+"display": "Ridgewood",
+"area": "queens",
+"centroid": [
+40.70636,
+-73.89395
+],
+"count": 9
+},
+{
+"slug": "glendale",
+"display": "Glendale",
+"area": "queens",
+"centroid": [
+40.70264,
+-73.88981
+],
+"count": 1
+},
+{
+"slug": "rego-park",
+"display": "Rego Park",
+"area": "queens",
+"centroid": [
+40.72954,
+-73.86197
+],
+"count": 8
+},
+{
+"slug": "forest-hills",
+"display": "Forest Hills",
+"area": "queens",
+"centroid": [
+40.7263,
+-73.84602
+],
+"count": 38
+}
+]

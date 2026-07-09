@@ -92,7 +92,8 @@ def load_sources():
     # 1. curated Brooklyn (pristine) — always from the committed snapshot, never from OUT
     cur = json.load(open(os.path.join(HERE, "neighborhoods.brooklyn.json")))
     for n in cur:
-        out.append((n["slug"], n["display"], "brooklyn", [n["polygon"]]))
+        rings = n.get("rings") or [n["polygon"]]   # real polygons (rings) or legacy single box
+        out.append((n["slug"], n["display"], "brooklyn", rings))
     # 2. JC + Hoboken
     for slug, disp, area, ring in JC_HOBOKEN:
         out.append((slug, disp, area, [ring]))
