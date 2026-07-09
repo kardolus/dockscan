@@ -18,6 +18,8 @@ import json
 import math
 import os
 import re
+import urllib.parse
+import urllib.request
 from collections import defaultdict
 
 HERE = os.path.dirname(__file__)
@@ -25,6 +27,7 @@ OUTDIR = os.path.join(HERE, "..", "configs", "chicago")
 CA = os.environ.get("CHI_CA", "/tmp/chi_ca.geojson")
 STATIONS = os.environ.get("CHI_STATIONS", "/tmp/chi_si.json")
 _MIN_STEP = 0.0002
+_UA = "bikeshare-web/1.0 (kardolus@gmail.com)"
 
 # Community-area number → Chicago "side" (the canonical 9-side grouping).
 _SIDES = {
@@ -40,9 +43,32 @@ _SIDES = {
 }
 _NUM_SIDE = {n: s for s, nums in _SIDES.items() for n in nums}
 
-# Evanston (incl. the Northwestern stations) — a generous ring; only matched after the
-# Community Areas, so it never steals Chicago-side stations.
-_EVANSTON = [[42.010, -87.650], [42.010, -87.745], [42.080, -87.745], [42.080, -87.650]]
+# Evanston (incl. the Northwestern stations) — its real OSM municipal boundary, fetched
+# below. Only matched after the Community Areas, so it never steals Chicago-side stations.
+# Fallback box (used only if the OSM fetch fails) so the build stays offline-robust.
+_EVANSTON_BOX = [[42.010, -87.650], [42.010, -87.745], [42.080, -87.745], [42.080, -87.650]]
+
+
+def evanston_rings():
+    """Evanston's real city boundary from OSM/Nominatim (the administrative polygon),
+    as simplified [lat,lon] rings. Falls back to a bounding box if the fetch fails."""
+    cache = "/tmp/osm-evanston.json"
+    try:
+        if os.path.exists(cache):
+            d = json.load(open(cache))
+        else:
+            url = ("https://nominatim.openstreetmap.org/search?"
+                   + urllib.parse.urlencode({"q": "Evanston, Cook County, Illinois",
+                                             "polygon_geojson": 1, "format": "json",
+                                             "limit": 5, "featuretype": "city"}))
+            with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": _UA}), timeout=60) as r:
+                d = json.load(r)
+            json.dump(d, open(cache, "w"))
+        feat = next(x for x in d if x.get("class") == "boundary" and x.get("type") == "administrative")
+        return grings(feat["geojson"])
+    except Exception as e:  # network/parse failure — keep the build working offline
+        print("WARN Evanston OSM boundary unavailable, using fallback box:", e)
+        return [_simplify(_EVANSTON_BOX)]
 
 
 def slugify(s):
@@ -87,7 +113,7 @@ def load_sources():
         num = int(p["area_numbe"])
         side = _NUM_SIDE.get(num, "chicago")
         out.append((slugify(p["community"]), titlecase(p["community"]), side, grings(f["geometry"])))
-    out.append(("evanston", "Evanston", "evanston", [_simplify(_EVANSTON)]))
+    out.append(("evanston", "Evanston", "evanston", evanston_rings()))
     return out
 
 

@@ -24,8 +24,8 @@
 "display": "Uptown",
 "area": "far-north-side",
 "centroid": [
-41.96574,
--87.65532
+41.96569,
+-87.65544
 ],
 "count": 20
 },
@@ -44,10 +44,10 @@
 "display": "North Center",
 "area": "north-side",
 "centroid": [
-41.94956,
--87.68351
+41.94961,
+-87.68301
 ],
-"count": 18
+"count": 19
 },
 {
 "slug": "lake-view",
@@ -74,10 +74,10 @@
 "display": "Near North Side",
 "area": "central",
 "centroid": [
-41.89776,
--87.6324
+41.8978,
+-87.63257
 ],
-"count": 87
+"count": 86
 },
 {
 "slug": "edison-park",
@@ -694,8 +694,8 @@
 "display": "Ashburn",
 "area": "far-southwest-side",
 "centroid": [
-41.74506,
--87.70512
+41.74499,
+-87.70511
 ],
 "count": 37
 },
