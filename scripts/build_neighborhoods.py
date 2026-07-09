@@ -66,26 +66,6 @@ def fetch_json(url, cache=None):
     return d
 
 
-# --- hand-drawn Jersey City + Hoboken (rough rings of [lat, lon], CCW). Tuned to the
-#     Citi Bike footprint; refine boxes from the coverage report. ------------------------
-JC_HOBOKEN = [
-    ("hoboken", "Hoboken", "hoboken",
-     [[40.7355, -74.0300], [40.7355, -74.0405], [40.7570, -74.0405], [40.7570, -74.0235], [40.7440, -74.0235], [40.7440, -74.0300]]),
-    ("jc-downtown", "Downtown Jersey City", "jersey-city",
-     [[40.7050, -74.0300], [40.7050, -74.0520], [40.7270, -74.0520], [40.7270, -74.0300]]),
-    ("jc-the-heights", "The Heights", "jersey-city",
-     [[40.7400, -74.0400], [40.7400, -74.0640], [40.7620, -74.0640], [40.7620, -74.0400]]),
-    ("jc-journal-square", "Journal Square", "jersey-city",
-     [[40.7180, -74.0520], [40.7180, -74.0760], [40.7400, -74.0760], [40.7400, -74.0520]]),
-    ("jc-bergen-lafayette", "Bergen-Lafayette", "jersey-city",
-     [[40.6960, -74.0560], [40.6960, -74.0820], [40.7180, -74.0820], [40.7180, -74.0560]]),
-    ("jc-west-side", "West Side", "jersey-city",
-     [[40.7100, -74.0760], [40.7100, -74.0960], [40.7400, -74.0960], [40.7400, -74.0760]]),
-    ("jc-greenville", "Greenville", "jersey-city",
-     [[40.6840, -74.0640], [40.6840, -74.0920], [40.6960, -74.0920], [40.6960, -74.0640]]),
-]
-
-
 def load_sources():
     """Returns an ordered list of (slug, display, area, rings) in precedence order."""
     out = []
@@ -94,9 +74,11 @@ def load_sources():
     for n in cur:
         rings = n.get("rings") or [n["polygon"]]   # real polygons (rings) or legacy single box
         out.append((n["slug"], n["display"], "brooklyn", rings))
-    # 2. JC + Hoboken
-    for slug, disp, area, ring in JC_HOBOKEN:
-        out.append((slug, disp, area, [ring]))
+    # 2. JC + Hoboken — real polygons (scripts/build_jc_polygons.py: OSM boundaries +
+    #    Voronoi split of Jersey City among its 6 neighborhoods, clipped to the city outline).
+    jc = json.load(open(os.path.join(HERE, "neighborhoods.jc.json")))
+    for n in jc:
+        out.append((n["slug"], n["display"], n["area"], n["rings"]))
     nta = fetch_json(NTA_URL, NTA_CACHE)
     # 2b. Governors Island — its own Manhattan neighborhood (never lump it with Red Hook).
     #     It lives in a non-residential (type-9) NTA lumped with Battery/Ellis/Liberty, so
@@ -130,7 +112,7 @@ def main():
     sources = load_sources()
     print(f"loaded {len(sources)} candidate neighborhoods "
           f"({sum(1 for s in sources if s[2]=='brooklyn')} curated Brooklyn, "
-          f"{len(JC_HOBOKEN)} JC/Hoboken, rest NTAs)")
+          f"{sum(1 for s in sources if s[2] in ('jersey-city', 'hoboken'))} JC/Hoboken, rest NTAs)")
 
     stations = fetch_json(GBFS)["data"]["stations"]
     stations = [s for s in stations if s.get("lat") is not None and s.get("lon") is not None]
@@ -182,13 +164,25 @@ def main():
     # emit only neighborhoods with >=1 station; curated Brooklyn first, then by area+display
     order = {s[0]: i for i, s in enumerate(sources)}
     out = []
+    dropped_rings = 0
     for slug in sorted(members, key=lambda s: order[s]):
         disp, area, rings = meta[slug]
         pts = members[slug]
+        # Drop rings that contain no assigned station. NYC NTAs are MultiPolygons whose small
+        # pieces are often piers / harbor islands with zero stations; those render as stray
+        # green slivers in the water (and Leaflet misreads a leading sliver as the whole shape).
+        # Keeping only station-bearing rings removes the slivers while preserving real detached
+        # pieces (e.g. Roosevelt Island, which does have stations).
+        kept = [r for r in rings if any(ray_inside(la, lo, r) for la, lo in pts)]
+        if not kept:
+            kept = rings   # safety: all members snapped from outside — keep the source rings
+        dropped_rings += len(rings) - len(kept)
         clat = round(sum(p[0] for p in pts) / len(pts), 5)
         clon = round(sum(p[1] for p in pts) / len(pts), 5)
         out.append({"slug": slug, "display": disp, "area": area,
-                    "centroid": [clat, clon], "count": len(pts), "rings": rings})
+                    "centroid": [clat, clon], "count": len(pts), "rings": kept})
+    if dropped_rings:
+        print(f"pruned {dropped_rings} station-less rings (harbor/pier slivers)")
 
     json.dump(out, open(OUT, "w"))
     # Lightweight meta (no rings) for the web app's registry + map bubbles.

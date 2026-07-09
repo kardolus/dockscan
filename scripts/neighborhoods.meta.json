@@ -270,16 +270,6 @@
 "count": 19
 },
 {
-"slug": "hoboken",
-"display": "Hoboken",
-"area": "hoboken",
-"centroid": [
-40.74441,
--74.03183
-],
-"count": 29
-},
-{
 "slug": "jc-downtown",
 "display": "Downtown Jersey City",
 "area": "jersey-city",
@@ -294,50 +284,60 @@
 "display": "The Heights",
 "area": "jersey-city",
 "centroid": [
-40.74055,
--74.04692
+40.74132,
+-74.04905
 ],
-"count": 8
+"count": 7
 },
 {
 "slug": "jc-journal-square",
 "display": "Journal Square",
 "area": "jersey-city",
 "centroid": [
-40.72915,
--74.06508
+40.72929,
+-74.06572
 ],
-"count": 12
+"count": 10
 },
 {
 "slug": "jc-bergen-lafayette",
 "display": "Bergen-Lafayette",
 "area": "jersey-city",
 "centroid": [
-40.71009,
--74.07329
+40.71144,
+-74.07148
 ],
-"count": 15
+"count": 13
 },
 {
 "slug": "jc-west-side",
 "display": "West Side",
 "area": "jersey-city",
 "centroid": [
-40.71322,
--74.08811
+40.71289,
+-74.08684
 ],
-"count": 9
+"count": 11
 },
 {
 "slug": "jc-greenville",
 "display": "Greenville",
 "area": "jersey-city",
 "centroid": [
-40.69643,
--74.08665
+40.69672,
+-74.08581
 ],
-"count": 8
+"count": 9
+},
+{
+"slug": "hoboken",
+"display": "Hoboken",
+"area": "hoboken",
+"centroid": [
+40.74389,
+-74.0325
+],
+"count": 31
 },
 {
 "slug": "governors-island",
