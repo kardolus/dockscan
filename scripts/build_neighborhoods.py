@@ -97,8 +97,20 @@ def load_sources():
     # 2. JC + Hoboken
     for slug, disp, area, ring in JC_HOBOKEN:
         out.append((slug, disp, area, [ring]))
-    # 3. NYC NTAs (residential), non-Brooklyn
     nta = fetch_json(NTA_URL, NTA_CACHE)
+    # 2b. Governors Island — its own Manhattan neighborhood (never lump it with Red Hook).
+    #     It lives in a non-residential (type-9) NTA lumped with Battery/Ellis/Liberty, so
+    #     pull out just the GI polygon (the piece whose centroid sits on the island).
+    for f in nta["features"]:
+        if f["properties"].get("ntaname") == "The Battery-Governors Island-Ellis Island-Liberty Island":
+            for poly in f["geometry"]["coordinates"]:
+                ring = [[lat, lon] for lon, lat in poly[0]]
+                clat = sum(p[0] for p in ring) / len(ring)
+                clon = sum(p[1] for p in ring) / len(ring)
+                if 40.68 < clat < 40.70 and -74.025 < clon < -74.008:
+                    out.append(("governors-island", "Governors Island", "manhattan", [ring]))
+            break
+    # 3. NYC NTAs (residential), non-Brooklyn
     for f in nta["features"]:
         p = f["properties"]
         if p.get("ntatype") != "0":

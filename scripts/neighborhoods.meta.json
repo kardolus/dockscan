@@ -174,10 +174,10 @@
 "display": "Red Hook",
 "area": "brooklyn",
 "centroid": [
-40.67715,
--74.01032
+40.67609,
+-74.00906
 ],
-"count": 19
+"count": 17
 },
 {
 "slug": "carroll-gardens",
@@ -194,10 +194,10 @@
 "display": "Cobble Hill",
 "area": "brooklyn",
 "centroid": [
-40.68754,
--73.99841
+40.68708,
+-73.99682
 ],
-"count": 12
+"count": 11
 },
 {
 "slug": "gowanus",
@@ -338,6 +338,16 @@
 -74.08665
 ],
 "count": 8
+},
+{
+"slug": "governors-island",
+"display": "Governors Island",
+"area": "manhattan",
+"centroid": [
+40.68825,
+-74.01935
+],
+"count": 3
 },
 {
 "slug": "mott-haven-port-morris",
