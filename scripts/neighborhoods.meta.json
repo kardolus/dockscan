@@ -324,10 +324,10 @@
 "display": "Greenville",
 "area": "jersey-city",
 "centroid": [
-40.69672,
--74.08581
+40.69727,
+-74.08613
 ],
-"count": 9
+"count": 10
 },
 {
 "slug": "hoboken",
@@ -335,7 +335,7 @@
 "area": "hoboken",
 "centroid": [
 40.74389,
--74.0325
+-74.03248
 ],
 "count": 31
 },
